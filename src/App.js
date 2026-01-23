@@ -13,6 +13,7 @@ import ProtectedRoute from './components/Admin/ProtectedRoute';
 import HomePage from './pages/HomePage';
 
 import './App.css';
+import Ankush from './components/Ankush';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Router>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Ankush/>} />
 
           {/* Admin Login Route (hidden, accessed by typing URL directly) */}
           <Route path="/admin-login" element={<AdminLogin />} />
