@@ -13,7 +13,7 @@ import ProtectedRoute from './components/Admin/ProtectedRoute';
 import HomePage from './pages/HomePage';
 
 import './App.css';
-import Ankush from './components/Ankush';
+// import Ankush from './components/Ankush';
 
 function App() {
   return (
