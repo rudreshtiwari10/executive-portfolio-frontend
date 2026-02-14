@@ -124,6 +124,7 @@
   font-size: 15px;
   font-family: inherit;
   transition: border-color 0.3s;
+  color: #333;
 }
 
 .form-group input:focus,

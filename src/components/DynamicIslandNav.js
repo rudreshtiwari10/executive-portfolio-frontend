@@ -1,36 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './DynamicIslandNav.css';
 
 const menuItems = [
   { name: 'About', id: 'about' },
   { name: 'Expertise', id: 'skills' },
   { name: 'Companies', id: 'projects' },
-  { name: 'Global Reach', id: 'experience' },
+  { name: 'Media', id: 'experience' },
   { name: 'Leadership', id: 'academics' },
   { name: 'Impact', id: 'certifications' },
   { name: 'Services', id: 'services' }
 ];
 
 const connectOptions = [
-  { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com' },
-  { name: 'Email', icon: '📧', url: 'mailto:abhishek.ceo@countryedu.com' },
-  { name: 'Twitter', icon: '𝕏', url: 'https://twitter.com' },
+  { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/nikhilkamathcio' },
+  { name: 'Email', icon: '📧', url: 'mailto:nikhil.k@zerodha.com' },
+  { name: 'Twitter', icon: '𝕏', url: 'https://twitter.com/nikhilkamathcio' },
   { name: 'Schedule', icon: '📅', url: '#contact' }
 ];
 
 const DynamicIslandNav = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [currentSection, setCurrentSection] = useState('');
   const [isConnectHovered, setIsConnectHovered] = useState(false);
   const [isConnectExpanded, setIsConnectExpanded] = useState(false);
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
+    // Always show navigation on non-homepage
+    if (!isHomePage) {
+      setIsVisible(true);
+      return;
+    }
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsVisible(scrollPosition > 100);
 
-      // Detect current section
+      // Detect current section (only on homepage)
       const sections = menuItems.map(item => item.id);
       for (let section of sections) {
         const element = document.getElementById(section);
@@ -47,22 +57,34 @@ const DynamicIslandNav = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isHomePage]);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: 'smooth'
-      });
+    if (!isHomePage) {
+      // If not on homepage, navigate to homepage first, then scroll
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      // If on homepage, scroll directly
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 100;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      // If on homepage, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // If on another page, navigate to homepage
+      navigate('/');
+    }
   };
 
   return (
@@ -98,15 +120,16 @@ const DynamicIslandNav = () => {
 
               {/* Logo/Profile Section */}
               <motion.button
-                onClick={scrollToTop}
+                onClick={handleLogoClick}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="island-logo"
+                title={isHomePage ? 'Scroll to top' : 'Back to homepage'}
               >
                 <div className="logo-image">
                   <img
-                    src="/images/abhishek-singh.png"
-                    alt="Abhishek Singh"
+                    src="/images/IMG3.JPG"
+                    alt="Nikhil kamath"
                   />
                 </div>
                 <AnimatePresence mode="wait">
@@ -119,9 +142,10 @@ const DynamicIslandNav = () => {
                       transition={{ duration: 0.2 }}
                       className="logo-text"
                     >
-                      Abhishek Singh
+                      Nikhil Kamath
                     </motion.span>
                   )}
+                  
                 </AnimatePresence>
               </motion.button>
 

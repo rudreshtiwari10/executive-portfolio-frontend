@@ -108,9 +108,9 @@ const LeadershipPhilosophySection = () => {
                 />
               </svg>
               <blockquote className="quote-text">
-                "Leadership is not about being in charge. It's about taking care of those in your charge and empowering them to achieve extraordinary results."
+                "Change is the only constant in life. Adapt first, don’t fight"
               </blockquote>
-              <div className="quote-author">Thakur Abhishek Singh</div>
+              <div className="quote-author">Nikhil Kamath</div>
             </div>
           </>
         ) : (

@@ -57,11 +57,11 @@ const GlobalPresenceSection = () => {
         <div className="global-presence-header">
           <div className="section-label">
             <span className="label-line"></span>
-            <span className="label-text">Global Reach</span>
+            <span className="label-text">Media</span>
           </div>
-          <h2 className="section-title">Worldwide Presence</h2>
+          <h2 className="section-title">Media Presence</h2>
           <p className="section-subtitle">
-            Building strategic partnerships and driving innovation across continents
+            Hosting conversations with the world's most influential leaders across business, technology, and culture
           </p>
         </div>
 
@@ -88,13 +88,15 @@ const GlobalPresenceSection = () => {
                       <div className="country-region">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                           <path
-                            d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z"
+                            d="M12 1C10.34 1 9 2.34 9 4V12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12V4C15 2.34 13.66 1 12 1Z"
                             stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />
-                          <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
+                          <path d="M19 10V12C19 15.87 15.87 19 12 19C8.13 19 5 15.87 5 12V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          <line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                         </svg>
                         <span>{country.region}</span>
                       </div>
@@ -107,7 +109,7 @@ const GlobalPresenceSection = () => {
                     {/* Partnerships */}
                     {country.partnerships && country.partnerships.length > 0 && (
                       <div className="country-partnerships">
-                        <h4 className="partnerships-title">Key Partnerships</h4>
+                        <h4 className="partnerships-title">Notable Highlights</h4>
                         <ul className="partnerships-list">
                           {country.partnerships.map((partnership, idx) => (
                             <li key={idx} className="partnership-item">
@@ -133,27 +135,27 @@ const GlobalPresenceSection = () => {
               ))}
             </div>
 
-            {/* Global Stats */}
+            {/* Media Stats */}
             <div className="global-stats">
               <div className="stat-item">
                 <div className="stat-value">{globalPresence.length}+</div>
-                <div className="stat-label">Countries</div>
+                <div className="stat-label">Shows & Platforms</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <div className="stat-value">
-                  {globalPresence.reduce((acc, country) =>
-                    acc + (country.partnerships ? country.partnerships.length : 0), 0
+                  {globalPresence.reduce((acc, item) =>
+                    acc + (item.partnerships ? item.partnerships.length : 0), 0
                   )}+
                 </div>
-                <div className="stat-label">Partnerships</div>
+                <div className="stat-label">Notable Appearances</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <div className="stat-value">
                   {new Set(globalPresence.map(c => c.region)).size}
                 </div>
-                <div className="stat-label">Regions</div>
+                <div className="stat-label">Platforms</div>
               </div>
             </div>
           </>

@@ -1,3 +1,6 @@
+*{
+  font-color:black;
+}
 .blog-editor {
   max-width: 1200px;
   padding: 20px;
@@ -56,6 +59,7 @@
   font-size: 14px;
   font-family: inherit;
   transition: border-color 0.3s;
+  color: #333;
 }
 
 .form-group input:focus,

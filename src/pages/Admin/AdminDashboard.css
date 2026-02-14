@@ -115,6 +115,13 @@
   color: white;
 }
 
+/* Force dark text on all admin inputs (overrides global body color: #fff) */
+.admin-dashboard input,
+.admin-dashboard textarea,
+.admin-dashboard select {
+  color: #333 !important;
+}
+
 /* Main Content */
 .admin-main {
   flex: 1;

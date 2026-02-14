@@ -107,6 +107,13 @@
   gap: 40px;
 }
 
+/* Side Content (Carousel + Highlights) */
+.about-side {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .bio-content {
   display: flex;
   flex-direction: column;
@@ -146,59 +153,135 @@
   color: #c5a065;
 }
 
-/* Side Content */
-.about-side {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* Profile Image */
-.about-image-frame {
+/* Image Carousel Wrapper */
+.about-carousel-wrapper {
   position: relative;
   width: 100%;
-  max-width: 350px;
-  aspect-ratio: 4/5;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
+  aspect-ratio: 4/3;
 }
 
-.about-profile-image {
+/* Snake Border SVG */
+.carousel-snake-svg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.about-image-frame:hover .about-profile-image {
-  transform: scale(1.05);
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(197, 160, 101, 0.1) 0%,
-    transparent 50%,
-    rgba(197, 160, 101, 0.1) 100%
-  );
-  z-index: 1;
+  z-index: 5;
   pointer-events: none;
 }
 
-.image-border {
+.carousel-snake-path {
+  fill: none;
+  stroke: #c5a065;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 0 100;
+  stroke-dashoffset: 0;
+  animation: snake-border 5s linear infinite;
+}
+
+.carousel-snake-glow {
+  fill: none;
+  stroke: #c5a065;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 0 100;
+  stroke-dashoffset: 0;
+  opacity: 0.35;
+  filter: blur(4px);
+  animation: snake-border 5s linear infinite;
+}
+
+@keyframes snake-border {
+  0% {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 0;
+  }
+  15% {
+    stroke-dasharray: 30 70;
+    stroke-dashoffset: 0;
+  }
+  70% {
+    stroke-dasharray: 30 70;
+    stroke-dashoffset: -70;
+  }
+  100% {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: -100;
+  }
+}
+
+/* Image Carousel Frame */
+.about-carousel-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(197, 160, 101, 0.1);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
   position: absolute;
-  inset: -2px;
-  background: linear-gradient(135deg, #c5a065, transparent, #c5a065);
-  border-radius: 16px;
-  z-index: -1;
-  opacity: 0.3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.about-carousel-wrapper:hover .carousel-slide.active {
+  transform: scale(1.03);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s ease;
+}
+
+.carousel-dot.active {
+  background: #c5a065;
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(197, 160, 101, 0.5);
+}
+
+.carousel-dot:hover {
+  background: rgba(197, 160, 101, 0.7);
 }
 
 /* Education Section */

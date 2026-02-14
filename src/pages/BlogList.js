@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Navigation from '../components/Navigation';
+import DynamicIslandNav from '../components/DynamicIslandNav';
 import './BlogList.css';
 
 const BlogList = () => {
@@ -11,8 +11,14 @@ const BlogList = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4006';
+
+  // Trigger visibility animation
+  useEffect(() => {
+    setTimeout(() => setIsVisible(true), 100);
+  }, []);
 
   // Fetch published blogs
   useEffect(() => {
@@ -70,12 +76,20 @@ const BlogList = () => {
 
   return (
     <>
-      <Navigation />
-      <div className="blog-list-page">
+      <DynamicIslandNav />
+      <div className={`blog-list-page ${isVisible ? 'visible' : ''}`}>
+        {/* Background Elements */}
+        <div className="blog-pattern" />
+        <div className="blog-gradient" />
         {/* Header */}
         <header className="blog-header">
-          <h1>Blog</h1>
-          <p>Insights, thoughts, and updates</p>
+          <div className="section-label">
+            <span className="label-line" />
+            <span className="label-text">INSIGHTS</span>
+            <span className="label-line" />
+          </div>
+          <h1 className="section-title">Thought Leadership</h1>
+          <p className="section-subtitle">Insights, perspectives, and industry expertise from a visionary CEO</p>
         </header>
 
         {/* Search and Filter */}

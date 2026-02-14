@@ -84,4 +84,17 @@ export const scheduleMeeting = async (meetingData) => {
   }
 };
 
+// CEO AI Chat
+export const sendCeoChatMessage = async (message) => {
+  try {
+    const response = await api.post('/api/ceo-chat', { message }, { timeout: 30000 });
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 429) {
+      return { success: false, reply: 'You have reached the message limit. Please try again later.' };
+    }
+    throw error;
+  }
+};
+
 export default api;

@@ -36,21 +36,20 @@ const HeroSection = () => {
           </div>
 
           <h1 className="hero-title">
-            <span className="title-line">Thakur</span>
-            <span className="title-line title-main">Abhishek Singh</span>
+            <span className="title-line">Mr.</span>
+            <span className="title-line title-main">Nikhil Kamath</span>
           </h1>
 
           <p className="hero-subtitle">
-            Leading global transformation through strategic innovation,
-            technology excellence, and visionary leadership across multiple industries.
+           Building sustainable businesses at the intersection of finance and technology.
           </p>
 
           {/* Expertise Pills */}
           <div className="expertise-pills">
-            <div className="pill">Cybersecurity</div>
-            <div className="pill">EdTech</div>
-            <div className="pill">Strategic Consulting</div>
-            <div className="pill">Global Expansion</div>
+            <div className="pill">FinTech</div>
+            <div className="pill">Investment</div>
+            <div className="pill">Venture Capital</div>
+            <div className="pill">Philanthropy</div>
           </div>
 
           {/* Key Metrics */}
@@ -61,12 +60,12 @@ const HeroSection = () => {
             </div>
             <div className="metric-divider"></div>
             <div className="metric">
-              <div className="metric-value">6+</div>
-              <div className="metric-label">Global Markets</div>
+              <div className="metric-value">50+</div>
+              <div className="metric-label">Investments in startups/companies</div>
             </div>
             <div className="metric-divider"></div>
             <div className="metric">
-              <div className="metric-value">2</div>
+              <div className="metric-value">3+</div>
               <div className="metric-label">Companies Founded</div>
             </div>
           </div>
@@ -86,18 +85,18 @@ const HeroSection = () => {
 
           {/* Minimal Social Links */}
           <div className="hero-social">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/nikhilkamathcio/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
               </svg>
             </a>
-            <a href="mailto:abhishek.ceo@countryedu.com" aria-label="Email">
+            <a href="mailto:nikhil.k@zerodha.com" aria-label="Email">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="5" width="18" height="14" rx="2"/>
                 <path d="M3 7l9 6 9-6"/>
               </svg>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://x.com/nithin0dha?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.54-2.12-9.91-5.04-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.56 2.21 9.05 0 14-7.5 14-14 0-.21 0-.42-.02-.63.96-.69 1.8-1.56 2.46-2.55z"/>
               </svg>
@@ -116,8 +115,8 @@ const HeroSection = () => {
             {/* CEO Image */}
             <div className="image-container">
               <img
-                src={`${API_URL}/uploads/abhishek-ceo.png`}
-                alt="Thakur Abhishek Singh - CEO"
+                src={`${API_URL}/uploads/nikhil-ceo1.png`}
+                alt="Nikhil kamath CEO"
                 className="ceo-image"
               />
               <div className="image-overlay"></div>
@@ -154,8 +153,8 @@ const HeroSection = () => {
                 </svg>
               </div>
               <div className="badge-content">
-                <div className="badge-title">Global Leadership</div>
-                <div className="badge-text">UAE • Canada • Australia • India</div>
+                <div className="badge-title">Entrepreneur and Investor</div>
+                <div className="badge-text">Zerodha • True Beacon • Rainmatter • WTFund</div>
               </div>
             </div>
           </div>

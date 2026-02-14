@@ -34,7 +34,8 @@ const AboutManage = () => {
     try {
       setLoading(true);
       const response = await axios.get(`${API_URL}/api/content/admin/about`, { headers });
-      const data = response.data.data;
+      const items = response.data.data;
+      const data = Array.isArray(items) ? items[0] : items;
       if (data) {
         setAbout(data);
         setFormData({
