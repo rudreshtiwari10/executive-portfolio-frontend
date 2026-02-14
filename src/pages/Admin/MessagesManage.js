@@ -87,6 +87,7 @@ const MessagesManage = () => {
   useEffect(() => {
     fetchMessages();
     fetchStats();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, statusFilter, sortBy]);
 
   // Handle search

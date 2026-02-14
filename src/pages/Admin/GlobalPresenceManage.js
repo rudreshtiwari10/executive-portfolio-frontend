@@ -43,6 +43,7 @@ const GlobalPresenceManage = () => {
 
   useEffect(() => {
     fetchPresences();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle form input changes

@@ -58,6 +58,7 @@ const MessageDetail = () => {
 
   useEffect(() => {
     fetchMessage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   // Send response

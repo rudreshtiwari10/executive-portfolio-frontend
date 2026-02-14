@@ -59,6 +59,7 @@ const AboutManage = () => {
 
   useEffect(() => {
     fetchAbout();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle form input changes

@@ -43,6 +43,7 @@ const AchievementManage = () => {
 
   useEffect(() => {
     fetchAchievements();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle form input changes

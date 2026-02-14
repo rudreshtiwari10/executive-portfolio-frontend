@@ -46,6 +46,7 @@ const CompanyManage = () => {
 
   useEffect(() => {
     fetchCompanies();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle form input changes

@@ -41,6 +41,7 @@ const BlogEditor = () => {
     if (isEditing) {
       fetchBlog();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchBlog = async () => {

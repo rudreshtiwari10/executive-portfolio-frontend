@@ -39,6 +39,7 @@ const ExpertiseManage = () => {
 
   useEffect(() => {
     fetchExpertises();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle form input changes

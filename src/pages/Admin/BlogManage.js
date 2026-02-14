@@ -34,6 +34,7 @@ const BlogManage = () => {
 
   useEffect(() => {
     fetchBlogs();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Filter blogs based on status
