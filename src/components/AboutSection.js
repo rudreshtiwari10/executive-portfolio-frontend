@@ -2,9 +2,9 @@ import React, { useEffect, useState, useCallback } from 'react';
 import './AboutSection.css';
 
 const CAROUSEL_IMAGES = [
-  { src: '/images/IMG1.jpg', alt: 'CEO' },
-  { src: '/images/IMG2.jpg', alt: 'CEO' },
-  { src: '/images/IMG3.jpg', alt: 'CEO' },
+  { src: '/images/IMG1.JPG', alt: 'CEO' },
+  { src: '/images/IMG2.JPG', alt: 'CEO' },
+  { src: '/images/IMG3.JPG', alt: 'CEO' },
   { src: '/images/IMG_4.jpg', alt: 'CEO' },
 ];
 
